@@ -27,7 +27,7 @@ public class Address {
     private static Pattern addressPattern;
     private static Matcher matcher;
 
-    public final String value;
+    private final String value;
     private boolean isPrivate;
 
     /**
