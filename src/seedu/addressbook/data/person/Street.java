@@ -15,7 +15,7 @@ public class Street {
         return this.street;
     }
 
-    public String getBlock() {
+    public String getStreet() {
         return this.street;
     }
 }

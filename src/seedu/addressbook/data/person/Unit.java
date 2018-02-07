@@ -15,7 +15,7 @@ public class Unit {
         return this.unit;
     }
 
-    public String getBlock() {
+    public String getUnit() {
         return this.unit;
     }
 }

@@ -1,5 +1,6 @@
 package seedu.addressbook.data.person;
 
+import javafx.geometry.Pos;
 import seedu.addressbook.data.exception.IllegalValueException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -45,8 +46,8 @@ public class Address {
             this.street = new Street(matcher.group(STREET_INDEX));
             this.unit = new Unit(matcher.group(UNIT_INDEX));
             this.postalCode = new PostalCode((matcher.group(POSTAL_CODE_INDEX)));
-            this.value = trimmedAddress;
         }
+        this.value = trimmedAddress;
 
     }
 
@@ -68,12 +69,26 @@ public class Address {
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof Address // instanceof handles nulls
-                && this.value.equals(((Address) other).value)); // state check
+                && this.block.equals(((Address) other).getBlock())
+                && this.street.equals(((Address) other).getStreet())
+                && this.unit.equals(((Address) other).getUnit())
+                && this.postalCode.equals(((Address) other).getPostalCode()));
     }
 
-    @Override
-    public int hashCode() {
-        return value.hashCode();
+    public Block getBlock() {
+        return this.block;
+    }
+
+    public Street getStreet() {
+        return this.street;
+    }
+
+    public Unit getUnit() {
+        return this.unit;
+    }
+
+    public PostalCode getPostalCode() {
+        return this.postalCode;
     }
 
     public boolean isPrivate() {

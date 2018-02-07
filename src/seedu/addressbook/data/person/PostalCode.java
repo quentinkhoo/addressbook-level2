@@ -15,7 +15,7 @@ public class PostalCode {
         return this.postalCode;
     }
 
-    public String getBlock() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 }

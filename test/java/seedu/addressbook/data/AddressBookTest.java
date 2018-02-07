@@ -53,7 +53,7 @@ public class AddressBookTest {
         bobChaplin     = new Person(new Name("Bob Chaplin"),
                                     new Phone("94321500", false),
                                     new Email("bob@nusgreyhats.org", false),
-                                    new Address("9 ,Computing Drive, #01-01, 123123", false),
+                                    new Address("9, Computing Drive, #01-01, 123123", false),
                                     new UniqueTagList(tagMathematician));
 
         charlieDouglas = new Person(new Name("Charlie Douglas"),
