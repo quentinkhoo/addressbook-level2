@@ -4,6 +4,7 @@ import javafx.geometry.Pos;
 import seedu.addressbook.data.exception.IllegalValueException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.lang.StringBuilder;
 
 /**
  * Represents a Person's address in the address book.
@@ -28,7 +29,6 @@ public class Address {
     private static Pattern addressPattern;
     private static Matcher matcher;
 
-    private final String value;
     private boolean isPrivate;
 
     /**
@@ -47,8 +47,6 @@ public class Address {
             this.unit = new Unit(matcher.group(UNIT_INDEX));
             this.postalCode = new PostalCode((matcher.group(POSTAL_CODE_INDEX)));
         }
-        this.value = trimmedAddress;
-
     }
 
     /**
@@ -62,7 +60,15 @@ public class Address {
 
     @Override
     public String toString() {
-        return value;
+        StringBuilder sb = new StringBuilder();
+        sb.append(block.toString());
+        sb.append(", ");
+        sb.append(street.toString());
+        sb.append(", ");
+        sb.append(unit.toString());
+        sb.append(", ");
+        sb.append(postalCode.toString());
+        return sb.toString();
     }
 
     @Override
