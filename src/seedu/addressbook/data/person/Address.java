@@ -47,6 +47,7 @@ public class Address {
             this.unit = new Unit(matcher.group(UNIT_INDEX));
             this.postalCode = new PostalCode((matcher.group(POSTAL_CODE_INDEX)));
         }
+
     }
 
     /**
@@ -74,11 +75,7 @@ public class Address {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Address // instanceof handles nulls
-                && this.block.equals(((Address) other).getBlock())
-                && this.street.equals(((Address) other).getStreet())
-                && this.unit.equals(((Address) other).getUnit())
-                && this.postalCode.equals(((Address) other).getPostalCode()));
+                || (other instanceof Address); // instanceof handles nulls
     }
 
     public Block getBlock() {
