@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.*;
 
 import seedu.addressbook.common.Utils;
 import seedu.addressbook.data.exception.DuplicateDataException;
@@ -127,6 +128,10 @@ public class UniquePersonList implements Iterable<Person> {
      */
     public void clear() {
         internalList.clear();
+    }
+
+    public void sortAlphabetically() {
+        Collections.sort(internalList, Comparator.comparing(person -> person.getName().toString().toUpperCase()));
     }
 
     @Override
