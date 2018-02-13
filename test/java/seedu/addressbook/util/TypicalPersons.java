@@ -19,7 +19,7 @@ public class TypicalPersons {
 
     public TypicalPersons() {
         try {
-            amy = new Person(new Name("Amy Buck"), new Phone("91119111", false), new Email("ab@gmail.com", false),
+            amy = new Person(new Name("Amy buck"), new Phone("91119111", false), new Email("ab@gmail.com", false),
                     new Address("1 Clementi Road", false), new UniqueTagList());
             bill = new Person(new Name("Bill Clint"), new Phone("92229222", false), new Email("bc@gmail.com", false),
                     new Address("2 Clementi Road", true), new UniqueTagList());
@@ -43,6 +43,20 @@ public class TypicalPersons {
         }
     }
 
+    private void loadAddressBookWithSampleUnsortedData(AddressBook ab) {
+        try {
+            for (Person p : this.getTypicalUnsortedPersons()) {
+                ab.addPerson(new Person(p));
+            }
+        } catch (IllegalValueException e) {
+            assert false : "not possible";
+        }
+    }
+
+    public Person[] getTypicalUnsortedPersons() {
+        return new Person[]{bill, dan, amy, candy};
+    }
+
     public Person[] getTypicalPersons() {
         return new Person[]{amy, bill, candy, dan};
     }
@@ -50,6 +64,12 @@ public class TypicalPersons {
     public AddressBook getTypicalAddressBook() {
         AddressBook ab = new AddressBook();
         loadAddressBookWithSampleData(ab);
+        return ab;
+    }
+
+    public AddressBook getTypicalUnsortedAddressBook() {
+        AddressBook ab = new AddressBook();
+        loadAddressBookWithSampleUnsortedData(ab);
         return ab;
     }
 
