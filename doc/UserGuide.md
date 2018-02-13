@@ -81,6 +81,10 @@ Examples:
   `delete 1`<br>
   Deletes the 1st person in the results of the `find` command.
 
+### Sorting the address book: `sort`
+Sorts the address book alphabetically. <br>
+Format: sort
+
 ### View non-private details of a person : `view`
 Displays the non-private details of the specified person.<br>
 Format: `view INDEX`
